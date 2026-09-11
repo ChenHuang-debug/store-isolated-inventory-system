@@ -1,0 +1,2 @@
+db/migrations/*.sql -text
+deploy/letsencrypt/* text eol=lf

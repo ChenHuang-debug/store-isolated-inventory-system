@@ -1,0 +1,33 @@
+node_modules/
+.next/
+out/
+coverage/
+playwright-report/
+test-results/
+var/
+backups/
+data/import-source/*
+!data/import-source/.gitkeep
+*.log
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Local orchestration and temporary files
+.multica/
+CLAUDE.md
+.tmp/
+tmp/
+*.tsbuildinfo
+
+# Package-manager artifacts not used by this npm project
+pnpm-lock.yaml
+pnpm-workspace.yaml

@@ -1,0 +1,20 @@
+.form { display: grid; gap: 20px; }
+.field { display: grid; gap: 8px; }
+.field label { color: #33413c; font-size: 14px; font-weight: 700; }
+.field input {
+  width: 100%; height: 52px; border: 1px solid #d9dfdb; border-radius: 8px;
+  background: #fff; padding: 0 15px; color: #17221f; outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+.field input:focus { border-color: #0f7f6d; box-shadow: 0 0 0 3px rgba(15,127,109,.12); }
+.error { margin: 0; border-left: 3px solid #b94b35; background: #fbece7; padding: 12px 14px; color: #8d3424; font-size: 14px; }
+.submit {
+  display: flex; height: 54px; align-items: center; justify-content: center; gap: 10px;
+  border: 0; border-radius: 8px; background: #0f7f6d; color: #fff; font-weight: 700; cursor: pointer;
+}
+.submit:hover:not(:disabled) { background: #0a6c5d; }
+.submit:disabled { cursor: wait; opacity: .72; }
+.help { margin: 0; color: #7d8783; font-size: 13px; text-align: center; }
+.spin { animation: spin 800ms linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .spin { animation: none; } }

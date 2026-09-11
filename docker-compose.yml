@@ -1,0 +1,46 @@
+name: store-isolated-inventory-system
+
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: inventory_demo
+      POSTGRES_USER: inventory_app
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-local-dev-only-change-this-password}
+      TZ: Asia/Shanghai
+    ports:
+      - "127.0.0.1:55432:5432"
+    volumes:
+      - inventory_demo_postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U inventory_app -d inventory_demo"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    deploy:
+      resources:
+        limits:
+          memory: 768M
+
+  mailpit:
+    image: axllent/mailpit:v1.27
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:58025:1025"
+      - "127.0.0.1:58080:8025"
+    environment:
+      MP_MAX_MESSAGES: 1000
+      MP_DATABASE: /data/mailpit.db
+    volumes:
+      - inventory_demo_mailpit_data:/data
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+
+volumes:
+  inventory_demo_postgres_data:
+    name: inventory_demo_postgres_data
+  inventory_demo_mailpit_data:
+    name: inventory_demo_mailpit_data

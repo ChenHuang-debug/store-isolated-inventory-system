@@ -1,0 +1,48 @@
+{
+  "name": "store-isolated-inventory-system",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --passWithNoTests",
+    "check:env": "node scripts/check-env.mjs",
+    "db:migrate": "node scripts/migrate.mjs",
+    "db:wait": "node scripts/wait-for-db.mjs",
+    "db:setup": "node scripts/setup-runtime-db.mjs",
+    "admin:init": "node scripts/init-admin.mjs",
+    "mfa:enroll": "node scripts/enroll-mfa.mjs"
+  },
+  "dependencies": {
+    "@node-rs/argon2": "^2.0.2",
+    "exceljs": "^4.4.0",
+    "lucide-react": "^1.29.0",
+    "next": "16.2.12",
+    "pg": "^8.22.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/pg": "^8.20.4",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.12",
+    "tailwindcss": "^4",
+    "tsx": "^4.23.9",
+    "typescript": "^5",
+    "vitest": "^4.1.10"
+  },
+  "overrides": {
+    "nanoid": "3.3.18",
+    "postcss": "8.5.26",
+    "sharp": "0.35.3",
+    "uuid": "11.1.1"
+  }
+}
