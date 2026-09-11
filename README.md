@@ -17,7 +17,7 @@
 
 ## 技术栈
 
-- Next.js 16、React 19、TypeScript strict mode、Tailwind CSS
+- Next.js 16.3、React 19、TypeScript strict mode、Tailwind CSS
 - PostgreSQL 17、SQL migrations、Row-Level Security
 - Vitest、PostgreSQL integration tests
 - ExcelJS、Zod、Argon2id
